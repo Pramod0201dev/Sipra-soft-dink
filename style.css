@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+/* .header{
+    font-size: 3rem;
+    font-weight:700;
+    text-align: center;
+    filter: drop-shadow(2px 2px 2px red);
+} */
+
+.banner{
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    background-color: cadetblue;
+}
+.banner .product{
+    width: 250px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    z-index: 1;
+    transition: 0.7s;
+    --left: 0px ;
+    display: flex;
+    justify-content: center;
+}
+.banner .product .soda{
+    background: 
+    var(--url) var(--left) 0,
+    url(./Assets/mockup.png);
+    background-size: auto 100%;
+    width: 250px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    mask-image: url(./Assets/mockup.png);
+    mask-size: auto 100%;
+    transition: 0.7s;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+.banner .product .soda:nth-child(2):hover{
+    --left:1000px;
+    transform: translateX(-50%) translateY(-120px);
+    cursor: pointer;    
+}
+
+.banner .rock{
+    position: absolute;
+    inset: 0 0 0 0;
+    pointer-events: none;
+}
+.banner .rock img{
+    position: absolute;
+    transition: 0.7s;
+}
+.banner .rock img:nth-child(1){
+    height: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+}
+.banner:has(.product:hover) .rock img:nth-child(1){
+    transform: translateX(-50%) translateY(50px);
+}
+
+.banner .rock img:nth-child(2){
+    position: absolute;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+}
+.banner:has(.product:hover) .rock img:nth-child(2){
+    transform: translateX(-100px) translateY(100px);
+}
+.banner .rock img:nth-child(3){
+    height: 90%;
+    right: 0;
+    bottom: -100px;
+    rotate: -25deg;
+}
+
+.banner:has(.product:hover) .rock img:nth-child(3){
+    transform: translateX(100px) translateY(100px);
+}
+/* 
+.banner .product .soda:nth-child(2){
+    visibility: hidden;
+}
+.banner .product:hover .soda:nth-child(2){
+    visibility: visible;
+    
+} */
+
+.banner .product .soda:nth-child(1){
+    visibility: hidden;
+}
