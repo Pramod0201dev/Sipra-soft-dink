@@ -8,13 +8,6 @@
     width: 100vw;
     overflow-x: hidden;
 }
-/* .header{
-    font-size: 3rem;
-    font-weight:700;
-    text-align: center;
-    filter: drop-shadow(2px 2px 2px red);
-} */
-
 .banner{
     height: 800px;
     overflow: hidden;
