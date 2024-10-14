@@ -15,7 +15,7 @@
     background: radial-gradient(circle, #55DADA, #84DBDB, #CDDDDD );
 }
 .banner{
-    height: 1000px;
+    height: 100%;
     overflow: hidden;
     position: relative;
     background-image: url(./Assets/strawberry/unsplash_V3OC7ISzwpE.png);
@@ -66,7 +66,6 @@
     position: absolute;
     left: 80%;
     transform: translateX(-50%);
-    bottom: 280px;
     z-index: 1;
     transition: 0.7s;
     --left: 0px ;
