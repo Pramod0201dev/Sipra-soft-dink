@@ -62,10 +62,6 @@
     position: absolute;
     left: 80%;
     transform: translateX(-50%);
-<<<<<<< HEAD
-=======
-    bottom: 10px;
->>>>>>> local
     z-index: 1;
     transition: 0.7s;
     --left: 0px ;
