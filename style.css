@@ -201,25 +201,25 @@ label.color-4{
     transition: all 250ms linear 300ms;
     
 }
-.back-color.chair-2{
+.back-color.mock-2{
     /* background-image: linear-gradient(196deg, #4c4c4c, #262626); */
     background-image: linear-gradient(196deg, #afa9a9, #e66767);
     opacity: 0;
 }
-.for-color-2:checked ~ .back-color.chair-2{
+.for-color-2:checked ~ .back-color.mock-2{
     opacity: 1;
 }
-.back-color.chair-3{
+.back-color.mock-3{
     background-image: linear-gradient(196deg, #6A775E , #5f7991);
     opacity: 0;
 }
-.for-color-3:checked ~ .back-color.chair-3{
+.for-color-3:checked ~ .back-color.mock-3{
     opacity: 1;
 }
-.back-color.chair-4{
+.back-color.mock-4{
     background-image: linear-gradient(196deg, #FB2C1E, #b3837f);
     opacity: 0;
 }
-.for-color-4:checked ~ .back-color.chair-4{
+.for-color-4:checked ~ .back-color.mock-4{
     opacity: 1;
 }
