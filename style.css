@@ -1,35 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
     text-decoration: none;
     color: black;
+    caret-color: transparent;
 }
 .wrapper{
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
-    /* background: radial-gradient(circle, #55DADA, #84DBDB, #CDDDDD ); */
 }
-.banner{
+.container{
+    width: 100%;
     height: 100%;
-    overflow: hidden;
     position: relative;
 }
 .navbar{
-    height: 100px;
-    display:flex;
-    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
 }
 .navbar a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 .main-text{
     font-size: 4rem;
@@ -39,6 +35,36 @@
     margin: 4rem 0 0 9rem;
     font-weight:500;
     color: #412B2B;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+    position: absolute;
+    visibility: hidden;
+}
+.color-btn:checked + label, 
+.color-btn:not(:checked) + label{
+    position: relative;
+    display: inline-block;
+    transition: all 200ms linear;
+    cursor: pointer;
+}
+.color-btn:checked + label{
+    transform: scale(1.2);
+}
+.orange, .strawbery, .pineapple, .lime{
+    width: 80px;
+    height: 80px;
+}
+.citrus, .berry{
+    position: absolute;
+    left: 0px;
+    top: 80px;
+}
+label.color-1{
+    margin:1rem 2rem  0 20rem;
+}
+label.color-3, label.color-4{
+    margin-left: 2rem;
 }
 .buttons{
     display: flex;
@@ -56,169 +82,61 @@
 .know-more{
     background-color: #9DDBDB;
 }
-.banner .product{
-    width: 250px;
-    height: 500px;
+.product{
+    width: 270px;
+    height: 540px;
     position: absolute;
-    left: 80%;
-    transform: translateX(-50%);
     bottom: 10px;
     z-index: 1;
     transition: 0.7s;
-    --left: 0px ;
-    display: flex;
-    justify-content: center;
+    --left:0px;
+    transform-origin: left;
+    transition: scale 0.5s ;
+    transform: translateX(1000px);
 }
-.banner .product .soda{
+.product .soda{
     background: 
-    var(--url) var(--left) 0,
+    url(./Assets/bg.png) var(--left) 0,
     url(./Assets/mockup.png);
     background-size: auto 100%;
-    width: 250px;
+    width: 270px;
     aspect-ratio: 2 / 4;
     background-blend-mode: multiply;
     mask-image: url(./Assets/mockup.png);
     mask-size: auto 100%;
     transition: 0.7s;
-    opacity: 0;
+    opacity: 1;
 }
 .soda:hover{
-    --left:1000px;
+    --left:1300px;
     transform: translateX(0%) translateY(-120px);
 }
-
-[type="radio"]:checked,
-[type="radio"]:not(:checked){
-    position: absolute;
-    visibility: hidden;
-}
-.color-btn:checked + label, 
-.color-btn:not(:checked) + label{
-    position: relative;
-    height: 40px;
-    width: 40px;
-    border-radius: 4px;
-    display: inline-block;
-    border: none;   
-    transition: all 200ms linear;
-    cursor: pointer;
-    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
-}
-
-.color-btn:checked + label{
-    transform: scale(1.2);
-}
-label.color-1{
-    background-color: #55DADA;
-    margin:1rem 2rem  0 9.2rem;
-}
-label.color-2{
-    background-color: #E86A4E;
-}
-label.color-3{
-    background-color: #6A775E;
-    margin-left: 2rem;
-}
-label.color-4{
-    background-color: #FB2C1E;
-    margin-left: 2rem;
-}
-.img-wrap{
-    position: absolute;
-    bottom: 10px;
-    left: 72.12%;
-    width: 250px;
-    height: 500px;
-    transition: all 550ms linear 100ms;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(./Assets/mockup.png);
-    background-size: 260px 500px;
-    opacity: 0;
-}
-.for-color-1:checked ~ .img-wrap.mockup-1{
-    opacity: 1;
-    /* animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; */
-    animation: dropBounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
-}
-
-.for-color-2:checked ~ .img-wrap.mockup-2{
-    opacity: 1;
-    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-}
-
-.for-color-3:checked ~ .img-wrap.mockup-3 {
-    opacity: 1;
-    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-}
-.for-color-4:checked ~ .img-wrap.mockup-4 {
-    opacity: 1;
-    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-}
-@keyframes shake{
-    10%,
-    90% {
-      transform: translate3d(-1px, 0, 0) rotate(-1deg);
-    }
-    20%,
-    80% {
-      transform: translate3d(2px, 0, 0) rotate(2deg);
-    }
-    30%,
-    50%,
-    70% {
-      transform: translate3d(-3px, 0, 0) rotate(-3deg);
-    }
-    40%,
-    60% {
-      transform: translate3d(3px, 0, 0) rotate(3deg);
-    }
-}
-@keyframes dropBounce {
-    0% {
-        transform: translateY(-1000px); /* Start way above the screen */
-    }
-    60% {
-        transform: translateY(30px); /* Overreach slightly for the bounce effect */
-    }
-    80% {
-        transform: translateY(-10px); /* Slight bounce upwards */
-    }
-    100% {
-        transform: translateY(0); /* Settle in final position */
-    }
-}
-
 .back-color{
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 0%;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* background-image: linear-gradient(196deg, #afa9a9, #e66767); */
-    background-image: linear-gradient(196deg, #8a9fb2, #5f7991);
-    transition: all 250ms linear 300ms;
-    
+    background-image: linear-gradient(45deg, #e2d1c0, #ee7504);
+    transition: all 250ms linear 150ms;
 }
 .back-color.mock-2{
-    /* background-image: linear-gradient(196deg, #4c4c4c, #262626); */
-    background-image: linear-gradient(196deg, #afa9a9, #e66767);
+    background-image: linear-gradient(135deg, #afa9a9, #e03939);
     opacity: 0;
 }
 .for-color-2:checked ~ .back-color.mock-2{
     opacity: 1;
 }
 .back-color.mock-3{
-    background-image: linear-gradient(196deg, #6A775E , #5f7991);
+    background-image: linear-gradient(200deg,rgb(163, 206, 163), #ddcc0f);
     opacity: 0;
 }
 .for-color-3:checked ~ .back-color.mock-3{
     opacity: 1;
 }
 .back-color.mock-4{
-    background-image: linear-gradient(196deg, #FB2C1E, #b3837f);
+    background-image: linear-gradient(275deg, #bcc8a2, #7cb111);
     opacity: 0;
 }
 .for-color-4:checked ~ .back-color.mock-4{
